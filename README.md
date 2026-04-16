@@ -41,13 +41,23 @@ Kafka (Event Hub) ←  All transactions flow here
 ↓
 
 Transaction Processor ← Validates data
+
 ↓
+
 Feature Engine ← "Is this user normally in Arizona?"
+
 ↓
+
 Model Service ← ML model: "Fraud risk = 72%"
+
 ↓
+
 Decision Engine ← Apply rules: "70% risk = REVIEW"
+
 ↓
+
 Alert Service ← Tell merchant & customer
+
 ↓
+
 Database ← Store everything (for audit trail)
