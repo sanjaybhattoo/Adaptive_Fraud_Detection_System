@@ -7,6 +7,15 @@ from utils import setup_logging, wait_for_dependencies
 
 logger = logging.getLogger(__name__)
 setup_logging(os.getenv('LOG_LEVEL', 'INFO'))
+def create_engine() -> 'DecisionEngine' or None:
+    try:
+        logger.info("Initializing Decision Engine...")
+        engine = DecisionEngine()
+        logger.info("Initionalized  successfully")
+        return engine
+    except Exception as e:
+        logger.error(f" Failed to initialize : {e}", exc_info=True)
+        return None
 
 def main():
     """Main entry point"""
